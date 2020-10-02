@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 // STEP 3: Create article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-api.herokuapp.com/articles
@@ -22,12 +24,12 @@
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
 
-function cardMake({Object}) {
+function cardMake(Object) {
     const cardWrapper = document.createElement('div')
     const title = document.createElement('div')
     const writer = document.createElement('div')
     const imageWrapper = document.createElement('div')
-    const images = document.createElement('img')
+    const img = document.createElement('img')
     const credit = document.createElement('span')
 
     cardWrapper.classList.add('card')
@@ -37,10 +39,11 @@ function cardMake({Object}) {
 
     title.textContent = Object.headline
     credit.textContent = `By`, + Object.authorName
-    images = img.src = Object.authorPhoto
+    img.src = Object.authorPhoto
 
     cardWrapper.append(title, writer)
     writer.appendChild(imageWrapper, credit)
+    imageWrapper.appendChild(img)
 
     cardWrapper.addEventListener('click', event => {
         console.log(Object.headline)
@@ -50,28 +53,28 @@ return cardWrapper
 }
 
 
-const cardSection = document.querySelector('cards-container')
+const cardSection = document.querySelector('.cards-container')
 
 
 axios.get('https://lambda-times-api.herokuapp.com/articles')
     .then(res => {
         const {bootstrap, javascript, technology, jquery, node} = res.data.articles;
-        const attach = cardSection.appendChild(cardMake(item))
+        // const attach = cardSection.appendChild(cardMake(item))
 
-            bootstrap.forEach(item => {
-                attach
+            bootstrap.forEach(item=> {
+                cardSection.appendChild(cardMake(item))
             })
             javascript.forEach(item => {
-                attach
+                cardSection.appendChild(cardMake(item))
             })
             technology.forEach(item => {
-                attach
+                cardSection.appendChild(cardMake(item))
             })
             jquery.forEach(item => {
-                attach
+                cardSection.appendChild(cardMake(item))
             })
             node.forEach(item => {
-                attach
+                cardSection.appendChild(cardMake(item))
             })
         })   
     .catch(err => {
