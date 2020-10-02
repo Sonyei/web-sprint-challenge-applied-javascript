@@ -82,16 +82,3 @@ axios.get('https://lambda-times-api.herokuapp.com/articles')
     .catch(err => {
 console.log(`This is the error -->`, err)
 })
-
-
-
-// articles.bootstrap
-// articles.javascript
-// articles.technology
-// articles.jquery
-// articles.node
-
-
-
-
-
