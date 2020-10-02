@@ -50,7 +50,25 @@ return cardWrapper
 }
 
 
+const cardSection = document.querySelector('cards-container')
+
+
 axios.get('https://lambda-times-api.herokuapp.com/articles')
 .then(res => {
 
+    Array.from(res.data)
+        console.log(res.data)
+    res.data.articles.forEach(item => {
+        cardSection.appendChild(cardMake(res.data)
+    })   
+.catch(err => {
+console.log(`This is the error -->`, err)
 })
+})
+
+
+// articles.bootstrap
+// articles.javascript
+// articles.technology
+// articles.jquery
+// articles.node
