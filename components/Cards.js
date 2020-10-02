@@ -38,11 +38,11 @@ function cardMake(Object) {
     imageWrapper.classList.add('img-container')
 
     title.textContent = Object.headline
-    credit.textContent = `By`, + Object.authorName
+    credit.textContent = `By ${Object.authorName}`
     img.src = Object.authorPhoto
 
     cardWrapper.append(title, writer)
-    writer.appendChild(imageWrapper, credit)
+    writer.append(imageWrapper, credit)
     imageWrapper.appendChild(img)
 
     cardWrapper.addEventListener('click', event => {
