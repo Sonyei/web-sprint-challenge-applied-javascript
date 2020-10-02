@@ -1,0 +1,14 @@
+1. What is the DOM?
+The DOM is the document object model and acts as a structured blueprint for the browser to read through and construct the intended page from.
+
+2. What is an event?
+An event is something that takes place, most often a user interaction or something the code dictates must happen.
+
+3. What is an event listener?
+An event listener is a function that is assigned specific events to listen for, and once those events fire the event listener will execute its given code.
+
+4. Why would we convert a NodeList into an Array?
+Array.from()
+
+5. What is a component?
+A component is a block of code that can run independent of the rest of the code and is used to progrommatically generate pieces of the app/site with JS, HTML, and CSS, even being stored in a seperate file and then later imported into the main file. These are useful for larger, complex sites and apps.
