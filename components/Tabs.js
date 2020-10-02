@@ -22,11 +22,12 @@ return topics
     const attach = document.querySelector('.topics')
 
 axios.get('https://lambda-times-api.herokuapp.com/topics')
-.then(res => {
-    res.data.topics.forEach(item => {
-        attach.appendChild(Tabs(item))
+    .then(res => {
+        res.data.topics.forEach(item => {
+            attach.appendChild(Tabs(item))
+        })
     })
-.catch(err => {
-    console.log(`This is the error -->`, err)
-})
+    .catch(err => {
+        console.log(`This is the error -->`, err)
+
 })
