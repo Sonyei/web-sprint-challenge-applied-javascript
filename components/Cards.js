@@ -60,27 +60,29 @@ axios.get('https://lambda-times-api.herokuapp.com/articles')
     .then(res => {
         const {bootstrap, javascript, technology, jquery, node} = res.data.articles;
 
+            function attach(cb, ele) {
+                cardSection.appendChild(cb(ele))
+                return 
+            }
+            
 
-            // function attach(cb, item) {
-            //     cardSection.appendChild(cardMake(item))
-            // }
 
         // const attach = cardSection.appendChild(cardMake(item))
 
             bootstrap.forEach(item=> {
-                cardSection.appendChild(cardMake(item))
+                attach(cardMake, item)
             })
             javascript.forEach(item => {
-                cardSection.appendChild(cardMake(item))
+                attach(cardMake, item)
             })
             technology.forEach(item => {
-                cardSection.appendChild(cardMake(item))
+                attach(cardMake, item)
             })
             jquery.forEach(item => {
-                cardSection.appendChild(cardMake(item))
+                attach(cardMake, item)
             })
             node.forEach(item => {
-                cardSection.appendChild(cardMake(item))
+                attach(cardMake, item)
             })
         })   
     .catch(err => {
@@ -94,3 +96,8 @@ console.log(`This is the error -->`, err)
 // articles.technology
 // articles.jquery
 // articles.node
+
+
+
+
+

@@ -27,7 +27,6 @@ function Header() {
     title.textContent = 'Lambda Times'
     temp.textContent = '98\°'
 
-
     headerWrapper.append(date, title, temp)
 
     return headerWrapper
