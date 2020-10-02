@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 // STEP 3: Create article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-api.herokuapp.com/articles
