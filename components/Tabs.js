@@ -10,9 +10,10 @@
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
 
-function Tabs() {
+function Tabs(topicName) {
     const topics = document.createElement('div')
     topics.classList.add('tab')
+    topics.textContent = topicName
     attach.appendChild(topics)
 
 return topics
