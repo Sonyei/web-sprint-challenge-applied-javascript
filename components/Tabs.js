@@ -23,7 +23,7 @@ return topics
 
 axios.get('https://lambda-times-api.herokuapp.com/topics')
 .then(res => {
-    console.log(res.data)
+    // console.log(res.data)
     res.data.topics.forEach(item => {
         attach.appendChild(Tabs(item))
     })
